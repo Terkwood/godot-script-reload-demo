@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Question" type="TextEdit" parent="."]
+margin_left = 80.0
+margin_top = 42.0
+margin_right = 295.0
+margin_bottom = 92.0
+rect_scale = Vector2( 4, 4 )
+custom_colors/background_color = Color( 0.721569, 0.243137, 0.243137, 1 )
+text = "Can a method be updated when
+ included in a PCK distribution?"
+readonly = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Greetings" type="Label" parent="."]
+margin_left = 354.0
+margin_top = 324.0
+margin_right = 454.0
+margin_bottom = 150.0
+rect_scale = Vector2( 3, 3 )
+text = "(WILLSET)"
+
+[node name="Reload" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 76.0
+margin_top = 299.0
+margin_right = 226.0
+margin_bottom = 442.0
+color = Color( 0.396078, 0.0941176, 0.0941176, 1 )
+[connection signal="timeout" from="Reload" to="." method="_on_Reload_timeout"]
